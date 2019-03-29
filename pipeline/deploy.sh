@@ -8,7 +8,7 @@ SEQ_WRITE=${ACTION_PREFIX}read-feedback-entry-sequence
 
 # logging into IBM Cloud
 REGION_CODE="${PROD_REGION_ID//ibm:yp:/}"
-bx login --apikey ${DEPLOYER_API_KEY} -a https://api.${REGION_CODE}.bluemix.net -o ${PROD_ORG_NAME} -s '${PROD_SPACE_NAME}'
+bx login --apikey ${DEPLOYER_API_KEY} -a https://api.${REGION_CODE}.bluemix.net -o ${PROD_ORG_NAME} -s "${PROD_SPACE_NAME}"
 
 # creating cloudant package
 bx fn package bind /whisk.system/cloudant ${CL_PACKAGE} -p dbname feedback
